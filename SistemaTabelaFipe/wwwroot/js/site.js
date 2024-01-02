@@ -1,31 +1,4 @@
-﻿//function MaisOption(id, caracteristica) {
-//    VeiculoSelecionadoRetornaMarca({ caracteristica: caracteristica })
-
-//    var icos = document.getElementsByClassName("bx bx-chevron-up");
-//    for (var i = 0; i < icos.length; i++) {
-//        icos[i].className = "bx bx-chevron-down";
-//    }
-
-//    let ico = document.getElementById(id)
-//    ico.className = "bx bx-chevron-up"
-//    ico.onclick = MenosOption.bind(null, id, caracteristica)
-
-//    var divs = document.getElementsByClassName("divMaisOption");
-//    for (var i = 0; i < divs.length; i++) {
-//        divs[i].innerHTML = "";
-//    }
-
-//    document.getElementById("divMaisOption-" + caracteristica).innerHTML = document.getElementById("divMaisOptionNone").innerHTML
-//}
-
-//function MenosOption(id, caracteristica) {
-//    let ico = document.getElementById(id)
-//    ico.className = "bx bx-chevron-down"
-//    ico.onclick = MaisOption.bind(null, id, caracteristica)
-//    document.getElementById("divMaisOption-" + caracteristica).innerHTML = ""
-//}
-
-function SelecionarVeiculo(veiculo, id) {
+﻿function SelecionarVeiculo(veiculo, id) {
     var botoesAtivos = document.querySelectorAll('.btnActive')
     for (var i = 0; i < botoesAtivos.length; i++) {
         botoesAtivos[i].className = "btn"
