@@ -1,8 +1,83 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+@* #5252C1 *@
 
 <div class="divPainelPai">
+    <div class="divPainel">
+        <div class="divEmpresa">
+            <a href="">
+                <label>AutoMotors</label>
+                <i class='bx bxs-car'></i>
+            </a>
+        </div>
+        <div class="divOpcoesPainelPai">
+            <div class="divOpcoesPainel">
+                <div class="divLabelComprar">
+                    <label>Comprar</label>
+                </div>
+                <div class="divLabelComprar">
+                    <label>Vender</label>
+                </div>
+                <div class="divLabelComprar">
+                    <label>Tabela Fipe</label>
+                </div>
+                <div class="divLabelComprar">
+                    <label>Pesquisar</label>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="divFiltroVeiculoPai">
+        <div class="divLabel">
+            <h2>Tabela Fipe</h2>
+            <label>Consulte o valor de um veículo</label>
+        </div>
+        <br />
+        <div class="divFiltroVeiculo">
+            <div class="divLabelFiltroVeiculo">
+                <label>Qual veículo você gostaria de pesquisar?</label>
+            </div>
+            @Html.Partial("/Views/ElementosHtml/FiltroVeiculo/FiltroVeiculo.cshtml")
+
+            <br />
+            <br />
+
+            <div class="divOpcoesPai">
+                <div class="divOpcoes">
+                    <select id="selectMarca">
+                        <option value="" disabled selected>Marca</option>
+                    </select>
+                    <select id="selectAnoModelo">
+                        <option value="" disabled selected>Ano Modelo</option>
+                    </select>
+                </div>
+                <div class="divOpcoes">                   
+                    <select id="selectModelo">
+                        <option value="" disabled selected>Modelo</option>
+                    </select>                  
+                </div>
+            </div>
+
+            <div class="divBtnPesquisar">
+                <button id="btnPesquisar">Pesquisar</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+@* <div class="divPainelPai">
     <div class="divPainel">
 
         <div class="divOptionButtonPai">
@@ -73,7 +148,7 @@
         <div class="divOptionLabel">
             <label>Ano Modelo</label>
         </div>
-    
+
         <select id="selectAnoModelo">
             <option value="" disabled selected></option>
         </select>
@@ -84,6 +159,20 @@
         <button id="btnPesquisar">Pesquisar</button>
     </div>
 </div>
+
+<div class="modal fade" id="ModalResultadoTabelaFipe" tabindex="-1" aria-labelledby="modalExemploLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalExemploLabel">Tabela Fipe</h5>
+            </div>
+            <div class="modal-body">
+                <div id="tabelaFipe"></div>
+            </div>
+        </div>
+    </div>
+</div>
+ *@
 
 <div class="modal fade" id="ModalResultadoTabelaFipe" tabindex="-1" aria-labelledby="modalExemploLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl modal-dialog-centered">
