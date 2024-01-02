@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using SistemaTabelaFipe.Models.Models;
 using SistemaTabelaFipe.Services.Interfaces;
+using System.Collections.Generic;
 
 namespace SistemaTabelaFipe.Services
 {
@@ -28,35 +29,13 @@ namespace SistemaTabelaFipe.Services
             return await response.Content.ReadAsStringAsync();
         }
 
-        public async Task<List<DadosVeiculo>> GetMarcaAnoModelo(Veiculo veiculo)
-        {
-            string retorno = await Api(veiculo);
+        public async Task<List<DadosVeiculo>> GetMarcaAnoModelo(Veiculo veiculo) =>
+            JsonConvert.DeserializeObject<List<DadosVeiculo>>(await Api(veiculo));
+    
+        public async Task<ListaModelos> GetModelo(Veiculo veiculo) =>
+            JsonConvert.DeserializeObject<ListaModelos>(await Api(veiculo));
 
-            List<DadosVeiculo> dados =
-                JsonConvert.DeserializeObject<List<DadosVeiculo>>(retorno);
-
-            return dados;
-
-        }
-
-        public async Task<ListaModelos> GetModelo(Veiculo veiculo)
-        {
-            string retorno = await Api(veiculo);
-
-            ListaModelos dados = JsonConvert.DeserializeObject<ListaModelos>(retorno);
-
-            return dados;
-
-        }
-
-        public async Task<TabelaFipe> Resultado(Veiculo veiculo)
-        {
-            string retorno = await Api(veiculo);
-
-            TabelaFipe tabela = JsonConvert.DeserializeObject<TabelaFipe>(retorno);
-
-            return tabela;
-
-        }      
+        public async Task<TabelaFipe> Resultado(Veiculo veiculo) =>
+            JsonConvert.DeserializeObject<TabelaFipe>(await Api(veiculo));
     }
 }

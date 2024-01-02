@@ -1,0 +1,58 @@
+﻿.modern-tabela table {
+    float: left;
+    border: 2px outset white;
+    border-bottom: 0;
+    border-right: 0;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #f4f4f4;
+}
+
+    .modern-tabela table tr td {
+        padding: 0.5em;
+        border: 2px solid white;
+        border-top: 0;
+        border-left: 0;
+    }
+
+    .modern-tabela table td.top {
+        background-color: white;
+        background-position: bottom;
+        color: black;
+        font-size: 1.2em;
+    }
+
+        .modern-tabela table td.top.center {
+            text-align: center;
+        }
+
+    .modern-tabela table td.total {
+        text-align: left;
+        font-weight: bold;
+    }
+
+    .modern-tabela table td.top-toltip {
+        background-color: #207d97;
+        height: 25px;
+        color: black;
+        font-size: 16px;
+    }
+
+.modern-tabela tbody tr td {
+    padding: 0.3em;
+    border: 2px solid none;
+    border-top: 0;
+    border-left: 0;
+}
+
+.modern-tabela tbody tr {
+    background-position: center;
+    background-size: 1000000px;
+    color: black;
+}
+
+    .modern-tabela tbody tr:hover {
+        background-color: lightgray;
+        color: black;
+        font-weight: bold
+    }
