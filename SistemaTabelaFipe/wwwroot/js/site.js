@@ -1,29 +1,29 @@
-﻿function MaisOption(id, caracteristica) {
-    VeiculoSelecionadoRetornaMarca({ caracteristica: caracteristica })
+﻿//function MaisOption(id, caracteristica) {
+//    VeiculoSelecionadoRetornaMarca({ caracteristica: caracteristica })
 
-    var icos = document.getElementsByClassName("bx bx-chevron-up");
-    for (var i = 0; i < icos.length; i++) {
-        icos[i].className = "bx bx-chevron-down";
-    }
+//    var icos = document.getElementsByClassName("bx bx-chevron-up");
+//    for (var i = 0; i < icos.length; i++) {
+//        icos[i].className = "bx bx-chevron-down";
+//    }
 
-    let ico = document.getElementById(id)
-    ico.className = "bx bx-chevron-up"
-    ico.onclick = MenosOption.bind(null, id, caracteristica)
+//    let ico = document.getElementById(id)
+//    ico.className = "bx bx-chevron-up"
+//    ico.onclick = MenosOption.bind(null, id, caracteristica)
 
-    var divs = document.getElementsByClassName("divMaisOption");
-    for (var i = 0; i < divs.length; i++) {
-        divs[i].innerHTML = "";
-    }
+//    var divs = document.getElementsByClassName("divMaisOption");
+//    for (var i = 0; i < divs.length; i++) {
+//        divs[i].innerHTML = "";
+//    }
 
-    document.getElementById("divMaisOption-" + caracteristica).innerHTML = document.getElementById("divMaisOptionNone").innerHTML
-}
+//    document.getElementById("divMaisOption-" + caracteristica).innerHTML = document.getElementById("divMaisOptionNone").innerHTML
+//}
 
-function MenosOption(id, caracteristica) {
-    let ico = document.getElementById(id)
-    ico.className = "bx bx-chevron-down"
-    ico.onclick = MaisOption.bind(null, id, caracteristica)
-    document.getElementById("divMaisOption-" + caracteristica).innerHTML = ""
-}
+//function MenosOption(id, caracteristica) {
+//    let ico = document.getElementById(id)
+//    ico.className = "bx bx-chevron-down"
+//    ico.onclick = MaisOption.bind(null, id, caracteristica)
+//    document.getElementById("divMaisOption-" + caracteristica).innerHTML = ""
+//}
 
 function SelecionarVeiculo(veiculo, id) {
     var botoesAtivos = document.querySelectorAll('.btnActive')
@@ -31,6 +31,9 @@ function SelecionarVeiculo(veiculo, id) {
         botoesAtivos[i].className = "btn"
     }
     document.getElementById(id).className = "btnActive"
+    LimparSelect("selectMarca", "Marca")
+    LimparSelect("selectModelo", "Modelo")
+    LimparSelect("selectAnoModelo", "Ano Modelo")
     VeiculoSelecionadoRetornaMarca(veiculo)
 }
 
@@ -68,11 +71,9 @@ function SelectMarcaRetornaModelo(veiculo) {
         data: veiculo,
         success: function (result) {
 
-            $("#selectModelo").html(result)
-            let htmlSelect = `<select id='selectAnoModelo'> <option value=''
-            disabled selected>Ano Modelo</option></select>`
-
-            $("#selectAnoModelo").html(htmlSelect);
+            $("#selectModelo").html(result)         
+            LimparSelect("selectAnoModelo","Ano Modelo")
+        
             var selectModelo = document.getElementById("selectModelo")        
             selectModelo.onchange = SelectModeloRetornaAnoModelo.bind(null, veiculo)
          
@@ -128,4 +129,10 @@ function Pesquisar(caracteristica) {
             }
         });
     }
+}
+
+function LimparSelect(id, descricao) {   
+    let htmlSelect = `<select id='${id}'> <option value=''
+            disabled selected>${descricao}</option></select>`
+    $("#" + id).html(htmlSelect)
 }
