@@ -1,0 +1,9 @@
+﻿@model SistemaTabelaFipe.Models.Models.ListaModelos
+
+<select id="selectModelo">
+    <option value="" disabled selected></option>
+    @foreach (var lin in Model.Modelos)
+    {
+        <option value="@lin.Codigo">@lin.Nome</option>
+    }
+</select>

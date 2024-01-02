@@ -1,0 +1,40 @@
+﻿@model SistemaTabelaFipe.Models.Models.TabelaFipe
+
+<div class="modern-tabela">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <td class="top center"><strong>Código Fipe</strong></td>
+                <td class="top center"><strong>Valor</strong></td>
+                <td class="top center"><strong>Marca</strong></td>
+                <td class="top center"><strong>Modelo</strong></td>                      
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td align="center">@Model.CodigoFipe</td>
+                <td align="center">@Model.Valor</td>
+                <td align="center">@Model.Marca</td>
+                <td align="center">@Model.Modelo</td>                    
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="modern-tabela">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <td class="top center"><strong>Ano Modelo</strong></td>
+                <td class="top center"><strong>Combustível</strong></td>             
+                <td class="top center"><strong>Mês Referência</strong></td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td align="center">@Model.AnoModelo</td>
+                <td align="center">@Model.Combustivel</td>             
+                <td align="center">@Model.MesReferencia</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

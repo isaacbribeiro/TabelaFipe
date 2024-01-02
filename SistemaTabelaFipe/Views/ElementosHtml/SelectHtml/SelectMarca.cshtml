@@ -1,0 +1,9 @@
+﻿@model List<SistemaTabelaFipe.Models.Models.DadosVeiculo>
+
+<select id="selectMarca">
+    <option value="" disabled selected></option>
+    @foreach(var lin in Model)
+    {
+        <option value="@lin.Codigo">@lin.Nome</option>
+    }
+</select>
