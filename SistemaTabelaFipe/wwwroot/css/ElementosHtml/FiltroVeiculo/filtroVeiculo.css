@@ -1,0 +1,28 @@
+﻿.divBtnPai {
+    display: flex;
+    justify-content: center;
+}
+
+.divBtn {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+}
+
+    .divBtn button {
+        width: 30%;
+        font-size: 1vw;
+        font-weight: bold;      
+        border-radius: 10px;       
+        border: 2px solid #5252C1
+    }
+
+.btn {
+    background-color: #fff;
+    color: #5252C1;
+}
+
+.btnActive {
+    background-color: #5252C1;
+    color: white;
+}

@@ -25,7 +25,16 @@ function MenosOption(id, caracteristica) {
     document.getElementById("divMaisOption-" + caracteristica).innerHTML = ""
 }
 
-function VeiculoSelecionadoRetornaMarca(veiculo, event) {
+function SelecionarVeiculo(veiculo, id) {
+    var botoesAtivos = document.querySelectorAll('.btnActive')
+    for (var i = 0; i < botoesAtivos.length; i++) {
+        botoesAtivos[i].className = "btn"
+    }
+    document.getElementById(id).className = "btnActive"
+    VeiculoSelecionadoRetornaMarca(veiculo)
+}
+
+function VeiculoSelecionadoRetornaMarca(veiculo) {
 
     $.ajax({
         type: "POST",
@@ -60,8 +69,11 @@ function SelectMarcaRetornaModelo(veiculo) {
         success: function (result) {
 
             $("#selectModelo").html(result)
-            $("#selectAnoModelo").html("")
-            var selectModelo = document.getElementById("selectModelo");          
+            let htmlSelect = `<select id='selectAnoModelo'> <option value=''
+            disabled selected>Ano Modelo</option></select>`
+
+            $("#selectAnoModelo").html(htmlSelect);
+            var selectModelo = document.getElementById("selectModelo")        
             selectModelo.onchange = SelectModeloRetornaAnoModelo.bind(null, veiculo)
          
         },
